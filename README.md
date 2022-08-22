@@ -8,7 +8,7 @@
  - **Favour runtime configuration** - to keep the generation process as simple as possible, we favour runtime configuration, e.g. pluggable networking adaptors, logging etc
  - **Generation configuration** - if you do need to configure the generation process, the goal is to make this as simple as possible
  - **Opinionated** - we'll support just one 'official' generator per language
- - **Multi-repo** - each generator has its own repository, reducing overall traffic
+ - **Multi-repo** - each generato has its own repository, reducing overall traffic
  - **Extensively tested** - this repo contains a BDD test suite that is executed against each generator to ensure that it faithfully implements the OpenAPI specification
 
 ## Quick start
