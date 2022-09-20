@@ -27,11 +27,5 @@ jobs:
       - name: Install Node.js dependencies
         run: npm ci
 
-      - name: echo
-        run: echo "$PWD"
-
-      - name: navigate to openapi-forge root directory
-        run: cd ./openapi-forge
-
       - name: test:generators
         run: npm run test:generators
