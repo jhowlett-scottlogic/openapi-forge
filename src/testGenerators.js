@@ -26,8 +26,7 @@ function setupAndStartTests(generatorPath, arg1, arg2) {
 
     log.standard("Starting tests");
     console.log(`args: ${arg1} ${arg2}`)
-    // const test = shell.exec(`npm run test "${arg1}" "${arg2}"`, log.shellOptions);
-    const test = shell.exec(`npm run test ${arg1} ${arg2}`, log.shellOptions);
+    const test = shell.exec(`npm run test "${arg1}" "${arg2}"`, log.shellOptions);
 
     shell.cd(__dirname, log.shellOptions);
     return test.stdout.split("\n");
