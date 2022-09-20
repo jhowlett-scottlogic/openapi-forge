@@ -25,7 +25,9 @@ jobs:
           cache: 'npm'
 
       - name: Install Node.js dependencies
-        run: npm install
+        run: |
+        npm install
+        npm install -global
 
       - name: test:generators
         run: npm run test:generators
