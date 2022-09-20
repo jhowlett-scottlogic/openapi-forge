@@ -55,6 +55,7 @@ function getGenerator(languageData, generatorOption) {
 
 async function testGenerators(options) {
     let resultArray = {};
+    let exitCode = 0;
 
     log.setLogLevel(options.logLevel);
 
@@ -76,13 +77,19 @@ async function testGenerators(options) {
             const basePath = path.relative(path.join(generatorPath, "features/support"), path.join(__dirname, "../src/generate")).replaceAll("\\", "/");
 
             const stdout = setupAndStartTests(generatorPath, featurePath, basePath);
+           
+            const result = testResultParser.parseTypeScript(stdout[stdout.length-2], stdout[stdout.length-4]);
+            
+            // check if failed/skipped/undefined steps in tests. If so OR them onto the exit code to stop overwriting previous errors
+            exitCode = exitCode | testResultParser.checkTestResultForErrors(result);
 
-            resultArray.TypeScript = testResultParser.parseTypeScript(stdout[stdout.length-2], stdout[stdout.length-4]);
+            resultArray.TypeScript = result;
 
             log.standard(`${typescriptData.languageString} testing complete`);
 
         } catch(exception) {
             log.logFailedTesting(typescriptData.languageString, exception);
+            exitCode = exitCode | 1;
         } finally {
             generatorResolver.cleanup();
         }
@@ -96,12 +103,18 @@ async function testGenerators(options) {
 
             const stdout = setupAndStartTests(generatorPath, featurePath, "");
 
-            resultArray.CSharp = testResultParser.parseCSharp(stdout[stdout.length-2]);
+            const result = testResultParser.parseCSharp(stdout[stdout.length-2]);
+
+            // check if failed/skipped/undefined steps in tests. If so OR them onto the exit code to stop overwriting previous errors
+            exitCode = exitCode | testResultParser.checkTestResultForErrors(result);
+
+            resultArray.CSharp = result;
 
             log.standard(`${csharpData.languageString} testing complete`);
 
         } catch(exception) {
             log.logFailedTesting(csharpData.languageString, exception);
+            exitCode = exitCode | 1;
         } finally {
             generatorResolver.cleanup();
         }
@@ -110,6 +123,8 @@ async function testGenerators(options) {
     if(Object.keys(resultArray).length) {
         if(!log.isQuiet()) console.table(resultArray);
     }
+    console.log("exitCode:" + exitCode)
+    process.exit(exitCode);
 }
 
 module.exports = testGenerators;
