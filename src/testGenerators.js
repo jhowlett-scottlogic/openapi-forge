@@ -121,7 +121,7 @@ async function testGenerators(options) {
     }
     //Present the results of the testing
     if(Object.keys(resultArray).length) {
-        if(!log.isQuiet()) console.table(resultArray);
+        if((!log.isQuiet()) | (exitCode !== 0)) console.table(resultArray);
     }
     process.exit(exitCode);
 }
