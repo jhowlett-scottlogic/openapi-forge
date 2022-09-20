@@ -24,10 +24,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      - name: Install Node.js dependencies
+      - name: Install Node.js dependencies globally
         run: |
           npm install
-          npm install -global
+          npm install --global
 
       - name: test:generators
         run: npm run test:generators
