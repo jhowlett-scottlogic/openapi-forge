@@ -28,7 +28,7 @@ jobs:
         run: npm ci
 
       - name: navigate to openapi-forge root directory
-        # run: echo dir
+        run: echo "$PWD"
         run: cd ./openapi-forge
 
       - name: test:generators
