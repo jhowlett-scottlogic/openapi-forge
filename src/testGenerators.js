@@ -123,7 +123,6 @@ async function testGenerators(options) {
     if(Object.keys(resultArray).length) {
         if(!log.isQuiet()) console.table(resultArray);
     }
-    console.log("exitCode:" + exitCode)
     process.exit(exitCode);
 }
 
