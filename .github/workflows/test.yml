@@ -29,8 +29,8 @@ jobs:
           npm install
           npm install --global
 
-      - name: test:generators
-        run: npm run test:generators
+      # - name: test:generators
+      #   run: npm run test:generators
 
       - name: Upload repo
         if: always()
