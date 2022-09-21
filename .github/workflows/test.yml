@@ -37,11 +37,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tmp-folder
-          path: tmp/
+          path: /tmp/
 
       - name: Upload home
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: tmp-folder
-          path: home/
+          path: /home/
