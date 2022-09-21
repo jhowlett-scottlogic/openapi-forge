@@ -91,7 +91,7 @@ async function testGenerators(options) {
             log.logFailedTesting(typescriptData.languageString, exception);
             exitCode = exitCode | 1;
         } finally {
-            generatorResolver.cleanup();
+    //        generatorResolver.cleanup();
         }
     }
     if(csharp) {
@@ -123,7 +123,7 @@ async function testGenerators(options) {
             log.logFailedTesting(csharpData.languageString, exception);
             exitCode = exitCode | 1;
         } finally {
-            generatorResolver.cleanup();
+     //       generatorResolver.cleanup();
         }
     }
     //Present the results of the testing
