@@ -18,14 +18,13 @@ const typescriptData = {
 const csharpData = {
     languageString: "CSharp",
     languageLetter: "c",
-    generatorURL: "https://github.com/ScottLogic/openapi-forge-csharp.git"
+    generatorURL: "https://github.com/jhowlett-scottlogic/openapi-forge-csharp.git"
 }
 
 function setupAndStartTests(generatorPath, arg1, arg2) {
     shell.cd(generatorPath, log.shellOptions);
 
     log.standard("Starting tests");
-    console.log(`args: ${arg1} ${arg2}`)
     const test = shell.exec(`npm run test "${arg1}" "${arg2}"`, log.shellOptions);
 
     shell.cd(__dirname, log.shellOptions);
@@ -78,7 +77,7 @@ async function testGenerators(options) {
             const basePath = path.relative(path.join(generatorPath, "features/support"), path.join(__dirname, "../src/generate")).replaceAll("\\", "/");
 
             const stdout = setupAndStartTests(generatorPath, featurePath, basePath);
-           
+
             const result = testResultParser.parseTypeScript(stdout[stdout.length-2], stdout[stdout.length-4]);
             
             // check if failed/skipped/undefined steps in tests. If so OR them onto the exit code to stop overwriting previous errors
