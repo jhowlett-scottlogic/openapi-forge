@@ -31,3 +31,27 @@ jobs:
 
       - name: test:generators
         run: npm run test:generators
+
+      - name: navigate
+        run: |
+          dir
+          cd ..
+          dir
+          cd ..
+          dir
+          cd ..
+          dir
+          cd ..
+          dir
+          cd home/
+          dir
+          cd runner/
+          dir
+          cd work/
+          dir
+          cd openapi-forge/
+          dir
+          cd openapi-forge/
+          dir
+          cd features/
+          dir
