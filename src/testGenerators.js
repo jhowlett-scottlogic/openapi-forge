@@ -99,7 +99,14 @@ async function testGenerators(options) {
         try {
             const generatorPath = getGenerator(csharpData, options.csharp);
 
+            console.log("generatorPath:" + generatorPath);
+
+
             const featurePath = path.relative(path.join(generatorPath, "tests/FeaturesTests"), path.join(__dirname, "../features/*.feature"));
+
+            console.log("__dirname:" + __dirname);
+            
+            console.log("featurePath:" + featurePath);
 
             const stdout = setupAndStartTests(generatorPath, featurePath, "");
 
