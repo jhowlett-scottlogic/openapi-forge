@@ -108,7 +108,7 @@ async function testGenerators(options) {
             
             console.log("featurePath:" + featurePath);
 
-            const stdout = setupAndStartTests(generatorPath, featurePath, "");
+            const stdout = setupAndStartTests(generatorPath, featurePath.replaceAll("/", "\\"), "");
 
             const result = testResultParser.parseCSharp(stdout[stdout.length-2]);
 
