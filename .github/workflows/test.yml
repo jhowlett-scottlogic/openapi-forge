@@ -32,6 +32,10 @@ jobs:
       # - name: test:generators
       #   run: npm run test:generators
 
+      - name: dir
+        run: dir
+
+
       - name: Upload repo
         if: always()
         uses: actions/upload-artifact@v3
