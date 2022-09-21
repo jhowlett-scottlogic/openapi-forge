@@ -44,15 +44,7 @@ jobs:
           dir
           cd ..
           dir
-          cd home/
+          cd ..
           dir
-          cd runner/
-          dir
-          cd work/
-          dir
-          cd openapi-forge/
-          dir
-          cd openapi-forge/
-          dir
-          cd features/
+          cd tmp
           dir
