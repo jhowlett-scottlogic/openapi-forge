@@ -33,6 +33,7 @@ jobs:
         run: npm run test:generators
 
       - name: navigate
+        if: always()
         run: |
           dir
           cd ..
