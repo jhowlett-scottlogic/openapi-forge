@@ -102,7 +102,7 @@ async function testGenerators(options) {
             console.log("generatorPath:" + generatorPath);
 
 
-            const featurePath = path.relative(path.join(generatorPath, "tests/FeaturesTests"), path.join(__dirname, "../features/*.feature"));
+            const featurePath = path.relative(path.join(generatorPath, "tests/FeaturesTests"), path.join(__dirname, "../features/*.feature")).replaceAll("\\", "/");
 
             console.log("__dirname:" + __dirname);
             
