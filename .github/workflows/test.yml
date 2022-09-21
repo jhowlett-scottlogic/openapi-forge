@@ -29,30 +29,5 @@ jobs:
           npm install
           npm install --global
 
-      # - name: test:generators
-      #   run: npm run test:generators
-
-      - name: dir
-        run: dir
-
-
-      - name: Upload repo
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: repo-folder
-          path: openapi-forge/
-
-      - name: Upload tmp
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: tmp-folder
-          path: /tmp/
-
-      - name: Upload home
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: tmp-folder
-          path: /home/
+      - name: test:generators
+        run: npm run test:generators
