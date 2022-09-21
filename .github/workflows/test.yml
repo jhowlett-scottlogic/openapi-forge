@@ -32,6 +32,13 @@ jobs:
       - name: test:generators
         run: npm run test:generators
 
+      - name: Upload repo
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-folder
+          path: openapi-forge
+
       - name: Upload tmp
         if: always()
         uses: actions/upload-artifact@v3
