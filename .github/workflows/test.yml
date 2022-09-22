@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  test:generators:
+  test-generators:
     name: Test
     runs-on: windows-latest
     strategy:
@@ -28,5 +28,5 @@ jobs:
           npm install
           npm install --global
 
-      - name: test:generators
+      - name: test-generators
         run: npm run test:generators
