@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  run-eslint:
+  test:generators:
     name: Test
     runs-on: windows-latest
     strategy:
