@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run prettier:write
-npm run eslint:write
+npm run prettier:check
+npm run eslint:check
