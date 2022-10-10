@@ -183,6 +183,9 @@ async function generate(schemaPathOrUrl, generatorPathOrUrl, options) {
         "utf-8"
       );
 
+      const a=1;
+      if(a == 2) {return;}
+
       if (file.endsWith("handlebars")) {
         // run the handlebars template
         const template = Handlebars.compile(source);
