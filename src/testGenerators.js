@@ -85,6 +85,7 @@ async function testGenerators(options) {
       const featurePath = path
         .relative(generatorPath, path.join(__dirname, "../features/*.feature"))
         .replaceAll("\\", "/");
+        console.log(featurePath);
       const basePath = path
         .relative(
           path.join(generatorPath, "features/support"),
