@@ -85,14 +85,13 @@ async function testGenerators(options) {
       const featurePath = path
         .relative(generatorPath, path.join(__dirname, "../features/*.feature"))
         .replaceAll("\\", "/");
-        console.log(featurePath);
       const basePath = path
         .relative(
           path.join(generatorPath, "features/support"),
           path.join(__dirname, "../src/generate")
         )
         .replaceAll("\\", "/");
-
+          console.log(basePath + ":" + featurePath);
       const stdout = setupAndStartTests(generatorPath, featurePath, basePath);
 
       const result = testResultParser.parseTypeScript(
@@ -122,6 +121,7 @@ async function testGenerators(options) {
         path.join(generatorPath, "tests/FeaturesTests"),
         path.join(__dirname, "../features/*.feature")
       );
+      console.log(featurePath + "::");
 
       const stdout = setupAndStartTests(generatorPath, featurePath, "");
 
