@@ -59,16 +59,13 @@ jobs:
 
       - name: Update webpage contents
         if: github.event_name == 'push'
-        run: node CICD/updateWebpage CICD_${{github.event.pull_request.head.sha}}/test-results.json 
-      
-      - name: Commit changes
-        if: github.event_name == 'push'
         run: |
           git config --global user.name 'GitHubActions'
           git config --global user.email '<>'
           npm run format:write
           git branch -d gh-pages
           git checkout -b gh-pages
+          node CICD/updateWebpage CICD_${{github.event.pull_request.head.sha}}/test-results.json 
           git add WEBPAGE.md
           git commit -m "docs: Auto-update WEBPAGE.md"
           git push
