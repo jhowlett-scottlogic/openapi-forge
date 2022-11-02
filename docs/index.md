@@ -9,10 +9,10 @@ Some generators are more mature than others and this means that they can be at d
 [comment]: <> (Do not modify the text between the two MARKERs or the MARKERs themselves, it is auto-generated in the updateWebpage.yml workflow)
 [MARKER]: <> (START OF GENERATOR TESTING TABLE)
 
-| Generator      | Scenarios | Passed | Skipped | Undefined | Failed | Time  |
-| -------------- | --------- | ------ | ------- | --------- | ------ | ----- |
-| **TypeScript** | 30        | 30     | 0       | 0         | 0      | 1m00s |
-| **CSharp**     | 30        | 30     | 0       | 0         | 0      | 53s   |
+| Generator      | Scenarios | Passed | Skipped | Undefined | Failed | Time   |
+| -------------- | --------- | ------ | ------- | --------- | ------ | ------ |
+| **TypeScript** | 38        | 38     | 0       | 0         | 0      | 2m51s  |
+| **CSharp**     | 38        | 38     | 0       | 0         | 0      | 1m 1 s |
 
 [MARKER]: <> (END OF GENERATOR TESTING TABLE)
 
@@ -23,6 +23,6 @@ Some generators are more mature than others and this means that they can be at d
 
 ## TypeScript
 
-- No failed scenarios
+## CSharp
 
 [MARKER]: <> (END OF GENERATOR TESTING FAILURES)
